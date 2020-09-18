@@ -7,5 +7,5 @@ Selain->Palvelin: https://studies.cs.helsinki.fi/exampleapp/new_note_spa
 Palvelin->Selain: {"message":"note created"}
 
 note over Selain:
-Selain lisää luodun mustiinpanon listaan
+Selain lisää luodun mustiinpanon muistiinpanot-listaan
 end note
