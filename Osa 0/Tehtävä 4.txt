@@ -1,0 +1,18 @@
+title Tehtävä 4
+Selain->Palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+Palvelin->Selain: Uudelleenohjauspyyntö URL:iin https://studies.cs.helsinki.fi/exampleapp/notes
+Selain->Palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Palvelin->Selain: HTML-Koodi
+Selain->Palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Palvelin->Selain: main.css-tyylitiedosto
+Selain->Palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Palvelin->Selain: main.js (javascript-tiedosto)
+note over Selain: 
+Selain suorittaa javascript koodin, 
+jossa haettaan AJAX:lla palvelimelta JSON-datan
+end note
+Selain->Palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Palvelin->Selain: data.json-tiedoston sisältö JSON-muodossa
+note over Selain:
+Selain renderöi muistiinpano-listan saadusta JSON-datasta. 
+end note
