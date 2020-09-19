@@ -48,6 +48,8 @@ const Statistic = (props) => {
   )
 }
 const Statistics = ({good, neutral, bad, sum, average, positive}) => {
+  if(sum == 0) return (<span>Palautetta ei ole annettu</span>)
+  
   return (
     <>
     <Statistic text={'Hyvä ' + good} /><br/>
