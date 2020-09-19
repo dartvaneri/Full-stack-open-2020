@@ -55,12 +55,14 @@ const Statistics = ({good, neutral, bad, sum, average, positive}) => {
   return (
     <>
     <table>
-      <StatisticLine  text='Hyvä ' amount={good} />
-      <StatisticLine  text='Neutraali ' amount={neutral} />
-      <StatisticLine  text='Huono ' amount={bad} />
-      <StatisticLine  stic text='Yhteensä ' amount={sum} />
-      <StatisticLine  text='Keskiarvo ' amount={average} />
-      <StatisticLine  text='Positiivisia ' amount={positive + ' %'} />
+      <tbody>
+        <StatisticLine  text='Hyvä ' amount={good} />
+        <StatisticLine  text='Neutraali ' amount={neutral} />
+        <StatisticLine  text='Huono ' amount={bad} />
+        <StatisticLine  stic text='Yhteensä ' amount={sum} />
+        <StatisticLine  text='Keskiarvo ' amount={average} />
+        <StatisticLine  text='Positiivisia ' amount={positive + ' %'} />
+      </tbody>
     </table>
     </>
   )
