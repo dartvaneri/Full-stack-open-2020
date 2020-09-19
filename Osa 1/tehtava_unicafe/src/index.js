@@ -26,12 +26,13 @@ const App = () => {
       <Button handleClick={handleBad} text='Huono'/>
       <br/>
       <h2>Tilasto</h2><br/>
-      <Statistic text={'Hyvä ' + good} /><br/>
-      <Statistic text={'Neutraali ' + neutral} /><br/>
-      <Statistic text={'Huono ' + bad} /><br/>
-      <Statistic text={'Yhteensä ' + sum} /><br/>
-      <Statistic text={'Keskiarvo ' + average} /><br/>
-      <Statistic text={'Positiivisia ' + positive + ' %'} /><br/>
+      <Statistics 
+        good={good} 
+        neutral={neutral} 
+        bad={bad} 
+        sum={sum} 
+        average={average} 
+        positive={positive} />
     </div>
   )
 }
@@ -44,6 +45,18 @@ const Button = (props) => {
 const Statistic = (props) => {
   return (
     <span>{props.text} {props.amount}</span>
+  )
+}
+const Statistics = ({good, neutral, bad, sum, average, positive}) => {
+  return (
+    <>
+    <Statistic text={'Hyvä ' + good} /><br/>
+    <Statistic text={'Neutraali ' + neutral} /><br/>
+    <Statistic text={'Huono ' + bad} /><br/>
+    <Statistic text={'Yhteensä ' + sum} /><br/>
+    <Statistic text={'Keskiarvo ' + average} /><br/>
+    <Statistic text={'Positiivisia ' + positive + ' %'} /><br/>
+    </>
   )
 }
 ReactDOM.render(<App />, document.getElementById('root'))
