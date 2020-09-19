@@ -14,12 +14,18 @@ const App = (props) => {
     setVotes(copy);
   }
 
+  const mostVotes = votes.indexOf(Math.max(...votes))
+
   return (
     <div>
+      <h2>Päivän anekdootti</h2><br></br>
       {props.anecdotes[selected]}<br/>
       Ääniä: {votes[selected]}<br/>
       <button onClick={handeleVote}>Äänestä</button>
       <button onClick={nextAnecdote}>Seuraava anekdootti</button>
+      <h2>Eniten ääniä saanut anekdootti</h2><br/>
+      {props.anecdotes[mostVotes]}<br/>
+      Ääniä: {votes[mostVotes]}
     </div>
   )
 }
