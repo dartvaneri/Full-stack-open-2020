@@ -42,11 +42,11 @@ const Button = (props) => {
   )
 }
 
-const StatisticLine  = (props) => {
+const StatisticLine  = ({text, amount}) => {
   return (
-    <>
-    <span>{props.text}</span><br/>
-    </>
+    <tr>
+      <td>{text}</td><td>{amount}</td>
+    </tr>
   )
 }
 const Statistics = ({good, neutral, bad, sum, average, positive}) => {
@@ -54,12 +54,14 @@ const Statistics = ({good, neutral, bad, sum, average, positive}) => {
   
   return (
     <>
-    <StatisticLine  text={'Hyvä ' + good} />
-    <StatisticLine  text={'Neutraali ' + neutral} />
-    <StatisticLine  text={'Huono ' + bad} />
-    <StatisticLine  stic text={'Yhteensä ' + sum} />
-    <StatisticLine  text={'Keskiarvo ' + average} />
-    <StatisticLine  text={'Positiivisia ' + positive + ' %'} />
+    <table>
+      <StatisticLine  text='Hyvä ' amount={good} />
+      <StatisticLine  text='Neutraali ' amount={neutral} />
+      <StatisticLine  text='Huono ' amount={bad} />
+      <StatisticLine  stic text='Yhteensä ' amount={sum} />
+      <StatisticLine  text='Keskiarvo ' amount={average} />
+      <StatisticLine  text='Positiivisia ' amount={positive + ' %'} />
+    </table>
     </>
   )
 }
