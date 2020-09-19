@@ -10,6 +10,14 @@ const App = () => {
   const handleNeutral = () => setNeutral(neutral + 1);
   const handleBad = () => setBad(bad + 1);
 
+  const sum = good + neutral + bad;
+  const positive = sum == 0 ? 0 : good / sum * 100;
+  const positiveArr = Array(good).fill(1); 
+  const neutralArr = Array(neutral).fill(0); 
+  const badArr = Array(bad).fill(-1); 
+  const avgArr = positiveArr.concat(neutralArr.concat(badArr))
+  const average = avgArr.length == 0 ? 0 : avgArr.reduce((a, b) => a + b) / avgArr.length
+
   return (
     <div>
       <h1>Anna palautetta</h1><br/>
@@ -18,9 +26,12 @@ const App = () => {
       <Button handleClick={handleBad} text='Huono'/>
       <br/>
       <h2>Tilasto</h2><br/>
-      <Statistic text='Hyvä' amount={good} /><br/>
-      <Statistic text='Neutraali' amount={neutral} /><br/>
-      <Statistic text='Huono' amount={bad} /><br/>
+      <Statistic text={'Hyvä ' + good} /><br/>
+      <Statistic text={'Neutraali ' + neutral} /><br/>
+      <Statistic text={'Huono ' + bad} /><br/>
+      <Statistic text={'Yhteensä ' + sum} /><br/>
+      <Statistic text={'Keskiarvo ' + average} /><br/>
+      <Statistic text={'Positiivisia ' + positive + ' %'} /><br/>
     </div>
   )
 }
